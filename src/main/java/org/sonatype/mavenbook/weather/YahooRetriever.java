@@ -50,6 +50,7 @@ public class YahooRetriever {
         parameters.add("oauth_timestamp=" + timestamp);
         parameters.add("oauth_version=1.0");
         parameters.add("woeid=" + woeid);
+        parameters.add("u=c");
         // Make sure value is encoded
 //        parameters.add("location=" + URLEncoder.encode("sunnyvale,ca", "UTF-8"));
         parameters.add("format="+format);
@@ -89,7 +90,7 @@ public class YahooRetriever {
         
         CloseableHttpClient client = HttpClientBuilder.create().build();
 //        URI uri = URI.create(url+"?location=sunnyvale,ca&format="+format); 
-        URI uri = URI.create(url+"?woeid="+woeid+"&format="+format); 
+        URI uri = URI.create(url+"?woeid="+woeid+"&format="+format+"&u=c"); 
 		HttpGet request = new HttpGet(uri);
 		request.addHeader("Authorization", authorizationLine);
 		request.addHeader("X-Yahoo-App-Id", appId);
